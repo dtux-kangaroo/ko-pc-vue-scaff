@@ -1,7 +1,7 @@
 {
-  "name": "pc-vue",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
+  "name": "[[=name]]",
+  "version": "[[=version]]",
+  "description": "[[=description]]",
   "author": "yangyi <yhxyangyi@163.com>",
   "private": true,
   "scripts": {
