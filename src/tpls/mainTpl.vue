@@ -7,6 +7,7 @@
 <script>
 
 export default {
+  name: 'MainTpl',
   data(){
     return{
       msg:"layout"

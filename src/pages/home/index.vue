@@ -30,5 +30,6 @@ export default {
 <style>
 .vux-home {
   text-align: center;
+  color:blue;
 }
 </style>

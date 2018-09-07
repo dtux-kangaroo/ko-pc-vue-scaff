@@ -5,9 +5,6 @@ import Home from '@/pages/home/index'
 import User from '@/pages/user/index'
 
 Vue.use(Router)
-
-Vue.use(Router)
-
 export default new Router({
   mode: 'history',
   routes: [
