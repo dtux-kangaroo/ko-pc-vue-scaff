@@ -1,4 +1,4 @@
 const getters = {
-  userData: state => state.home.userData,
+  userData: state => state.home.homeData,
 }
 export default getters

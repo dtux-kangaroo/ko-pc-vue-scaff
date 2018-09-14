@@ -100,10 +100,10 @@ module.exports = {
     historyApiFallback: true,
     port: 8080,
     host: "127.0.0.1",
-    proxy: [{
-      context: ['/auth', '/api'],
-      target: 'http://localhost:3000',
-    }],
+    // proxy: [{
+    //   context: ['/auth', '/api'],
+    //   target: 'http://localhost:3000',
+    // }],
     hotOnly: true,
   }
 };

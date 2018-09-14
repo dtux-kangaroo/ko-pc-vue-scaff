@@ -3,6 +3,7 @@ import globalTpl from '@/tpls/globalTpl.vue'
 import router from '@/router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@/public/assets/styles/index.scss'
 import store from './store/index'
 import Viser from 'viser-vue' //图表库引入
 
@@ -19,9 +20,15 @@ Vue.use(Viser);
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
+  el: '#root',
   router,
   store,
   components: { globalTpl },
   template: '<globalTpl/>'
 })
+
+if(module.hot) {
+  module.hot.accept();
+
+
+}

@@ -1,29 +1,67 @@
 <template>
- <div>
-        <el-button size="small" type="primary" round >新建图表</el-button>
-        <router-view></router-view>
- </div>
+    <el-container>
+      <el-header><TopNav :nav-data="navData.topNav"/>/></el-header>
+      <el-container>
+        <el-aside width="200px">
+          <SideNav :nav-data="navData.sideNav"/>
+        </el-aside>
+        <el-container height="800px">
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+          <el-footer>
+            <Footer/>
+          </el-footer>
+        </el-container>
+      </el-container>
+    </el-container>
 </template>
 <script>
-
+import Footer from '@/components/footer'
+import SideNav from '@/components/sideNav'
+import TopNav from '@/components/topNav'
+import { mapState } from 'vuex'
 export default {
-  name: 'MainTpl',
-  data(){
-    return{
-      msg:"layout"
-    }
+  name: "MainTpl",
+  components:{TopNav,Footer,SideNav},
+  data() {
+    return {
+      msg: "layout",
+      //navData:[]
+    };
   },
-  mounted(){
-    this.$store.dispatch('getUserData', {});
+  mounted() {
+      this.$store.dispatch('getNavData');
+      console.log(this.navData,'sdasd');
   },
-  methods: {
-
-    }
+  beforeUpdate(){
+    console.log(this.navData,'data');
+  },
+  methods: {},
+  computed: mapState({
+    navData: state => state.global.navData
+  })
 };
 </script>
 
 <style lang="scss">
-.flex-demo{
-  text-align: center;
-}
+  .el-header {
+    background-color: #1A76D2;
+    line-height: 60px;
+  }
+
+  .el-aside {
+    border-right:1px solid #eee;
+    color: #333;
+    text-align: center;
+  }
+
+  .el-main {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+  }
+  .el-footer{
+    background: #f0f2f5;
+  }
 </style>

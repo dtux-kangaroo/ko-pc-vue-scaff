@@ -16,13 +16,11 @@ export default {
   },
   data () {
     return {
-      msg: 'Hello World!home'
+      msg: 'Hello World!home',
     }
   },
   mounted() {
-    api.getHomeData({}).then(ret=>{
-      console.log(ret);
-    })
+      //this.$store.dispatch('getNavData')
   }
 }
 </script>

@@ -3,17 +3,23 @@ import api from "@/api/index.js";
 
 const global = {
   state: {
-    globalData:[]
+    navData:{
+      topNav:[],
+      sideNav:[]
+    }
   },
   mutations: {
-    GET_GLOBAL_DATA: (state, globalData) => {
-      state.globalData = globalData;
+    GET_NAV_DATA: (state, navData) => {
+      state.navData = navData;
     }
   },
   actions: {
-    getGlobalData({ commit }, params,cb) {
-      commit('GET_GLOBAL_DATA',[]);
-     }
+    getNavData({ commit }, params,cb) {
+      api.getNavData({}).then(ret=>{
+        console.log(ret);
+        commit('GET_NAV_DATA', ret.data||[]);
+      })
+   }
   }
 }
 

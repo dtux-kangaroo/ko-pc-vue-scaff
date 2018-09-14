@@ -8,5 +8,9 @@ export default {
   async getUserData(param){
     let ret= await http.get(reqUrl.getUserData, param);
     return ret;
+  },
+  async getNavData(param){
+    let ret= await http.get(reqUrl.getNavData, param);
+    return ret;
   }
 }
