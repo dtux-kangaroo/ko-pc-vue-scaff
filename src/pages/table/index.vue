@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="vux-home">
-      home--主页{{msg}}
+       this is table{{msg}}
       <ChartLine></ChartLine>
   </div>
   </div>
@@ -16,11 +16,10 @@ export default {
   },
   data () {
     return {
-      msg: 'Hello World!home',
+      msg: 'Hello World!table',
     }
   },
   mounted() {
-      //this.$store.dispatch('getNavData')
   }
 }
 </script>

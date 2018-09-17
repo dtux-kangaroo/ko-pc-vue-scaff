@@ -17,11 +17,11 @@
       <el-dropdown>
           <span class="el-dropdown-link">
             <i class="iconfont  icon-guanliyuan2"/>
-            dtux
+           {{userData.name}}
             <i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>黄金糕</el-dropdown-item>
+            <el-dropdown-item><span @click="loginOut">退出</span></el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
     </div>
@@ -29,34 +29,30 @@
 </template>
 <script>
 import TopItem from "./topItem";
-import Logo from '@public/assets/imgs/logo.png'
+import Logo from "@public/assets/imgs/logo.png";
 export default {
   components: { TopItem },
-  props: ["navData"],
+  props: ["navData", "userData"],
   data() {
-    let routerArr=this.$router.currentRoute.path.match(/\/\w*/g);
-    console.log(routerArr,22);
+    let routerArr = this.$router.currentRoute.path.match(/\/\w*/g);
     return {
       activeIndex: routerArr[0],
-      openeds:[routerArr[0]],
+      openeds: [routerArr[0]],
       Logo
     };
   },
-  mounted(){
-    //console.log(this.$router,'12132',navData);
-  },
   methods: {
-    handleSelect() {
-      console.log("选中");
+    loginOut() {
+      this.$router.push("/login");
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-.logo{
-    width: 160px;
-    height: 40px;
-    margin-top: 10px;
+.logo {
+  width: 160px;
+  height: 40px;
+  margin-top: 10px;
 }
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover {
   background-color: #409eff !important;
@@ -74,11 +70,11 @@ export default {
     color: #fff !important;
   }
 }
-.el-dropdown{
-  color:#fff;
+.el-dropdown {
+  color: #fff;
   cursor: pointer;
-  .iconfont{
-    font-size:18px;
+  .iconfont {
+    font-size: 18px;
   }
 }
 </style>

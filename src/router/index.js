@@ -1,9 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import MainTpl from '@/tpls/mainTpl';
-import Home from '@/pages/home/index';
-import User from '@/pages/user/index';
 import tip404 from  '@/pages/error/404'
+import MainTpl from '@/tpls/mainTpl';
+import load from '@/components/load'
+import User from '@/pages/user';
+const Home = () => ({component: import('@/pages/home/index'),loading: load});
+const Login =()=>({component: import('@/pages/login'),loading: load})
+const Table =()=>({component: import('@/pages/table'),loading: load})
+const Analysis =()=>({component: import('@/pages/analysis'),loading: load})
 
 
 
@@ -14,11 +18,15 @@ export default new Router({
     {
      path:'/index',component:MainTpl,
      children:[
-      {path: '/index',name: 'home',component: Home},
-      {path: '/user',name: 'user',component: User},
-      { path: '/404', component:tip404, hidden: true },
+      {path: '',name: 'home',component: Home},
+      {path: 'table',name: 'tabel',component: Table},
+      {path: 'analysis',name: 'analysis',component: Analysis},
+      {path: 'user',name: 'user',component: User},
+      { path: '404', component:tip404, hidden: true },
      ]
     },
-    { path: '*', redirect: '/404'}
+    {path: '/login',name: 'login',component: Login},
+    {path: '/',redirect: '/index'},
+    { path: '*', redirect: '/index/404'}
   ]
 })

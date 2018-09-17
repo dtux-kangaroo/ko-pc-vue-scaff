@@ -40,7 +40,7 @@
           "id": 3,
           "parentId": 1,
           "permissionName": "分析页面",
-          "permissionIcon": "shezhi",
+          "permissionIcon": "",
           "permissionUrl": "/index/analysis",
           "children": []
          },
@@ -48,8 +48,8 @@
           "id": 3,
           "parentId": 1,
           "permissionName": "表格搜索",
-          "permissionIcon":"jieshoupeizhi",
-          "permissionUrl": "/index/role",
+          "permissionIcon":"",
+          "permissionUrl": "/index/table",
           "children": []
         },
         {

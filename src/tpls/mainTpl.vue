@@ -1,6 +1,6 @@
 <template>
     <el-container>
-      <el-header><TopNav :nav-data="navData.topNav"/></el-header>
+      <el-header><TopNav :nav-data="navData.topNav" :userData="userData"/></el-header>
       <el-container>
         <el-aside width="200px">
           <SideNav :nav-data="navData.sideNav"/>
@@ -29,7 +29,10 @@ export default {
   data() {
     return {
       msg: "layout",
-      //navData:[]
+      userData:{
+        name:'dtux',
+        phone:'13099999999'
+      }
     };
   },
   mounted() {
