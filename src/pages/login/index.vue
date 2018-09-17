@@ -1,0 +1,33 @@
+<template>
+  <div>
+    <div class="vux-home">
+      home--主页{{msg}}
+      <ChartLine></ChartLine>
+  </div>
+  </div>
+</template>
+
+<script>
+import api from "@/api/index.js";
+import {ChartLine} from "@/components/chart/index"
+export default {
+  components:{
+    ChartLine
+  },
+  data () {
+    return {
+      msg: 'Hello World!home',
+    }
+  },
+  mounted() {
+      //this.$store.dispatch('getNavData')
+  }
+}
+</script>
+
+<style>
+.vux-home {
+  text-align: center;
+  color:blue;
+}
+</style>

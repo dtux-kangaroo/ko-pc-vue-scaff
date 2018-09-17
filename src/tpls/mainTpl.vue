@@ -1,13 +1,15 @@
 <template>
     <el-container>
-      <el-header><TopNav :nav-data="navData.topNav"/>/></el-header>
+      <el-header><TopNav :nav-data="navData.topNav"/></el-header>
       <el-container>
         <el-aside width="200px">
           <SideNav :nav-data="navData.sideNav"/>
         </el-aside>
-        <el-container height="800px">
+        <el-container style="height:800px">
           <el-main>
+            <div class="content">
             <router-view></router-view>
+            </div>
           </el-main>
           <el-footer>
             <Footer/>
@@ -32,7 +34,6 @@ export default {
   },
   mounted() {
       this.$store.dispatch('getNavData');
-      console.log(this.navData,'sdasd');
   },
   beforeUpdate(){
     console.log(this.navData,'data');
@@ -51,15 +52,18 @@ export default {
   }
 
   .el-aside {
-    border-right:1px solid #eee;
     color: #333;
-    text-align: center;
   }
 
   .el-main {
-    background-color: #fff;
+    background-color: #f0f2f5;
     color: #333;
     text-align: center;
+    .content{
+      background: #fff;
+      height:600px;
+
+    }
   }
   .el-footer{
     background: #f0f2f5;

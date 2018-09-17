@@ -65,8 +65,7 @@ module.exports = {
       hash: false,
       chunksSortMode: "none",
       assets: {
-        favicon: '/images/favicon.ico',
-        config_js: '/conf/conf.dev.js'
+        config_js: '/config/conf.dev.js'
       }
     }),
     new webpack.NamedModulesPlugin(),
@@ -76,12 +75,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from:'./public/config',
-        to: './conf'
-      },
-      {
-        from: './public/mock',
-        to: './mock'
+        from:'./public',
+        to: './'
       }
     ])
   ],
@@ -89,7 +84,8 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss', '.css', '.vue'], //自动解析确定的扩展。覆盖原有扩展
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
+      '@public': path.resolve(__dirname, '../src/public')
     }
   },
   devServer: {

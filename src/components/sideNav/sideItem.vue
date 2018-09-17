@@ -9,7 +9,7 @@
             </template>
               <template v-for="child in nav.children">
                     <el-menu-item :key="child.permissionUrl"  :index="child.permissionUrl"
-                    @click="redirec(nav.permissionUrl)">
+                    @click="redirec(child.permissionUrl)">
                       <i class="iconfont" :class="[`icon-${child.permissionIcon}`]"></i> {{child.permissionName}}
                     </el-menu-item>
               </template>
@@ -34,11 +34,11 @@ export default {
   },
   methods: {
     redirec(path){
-     const urlregex = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/
-       if(urlregex.test(path)){
+      console.log(path,'path')
+      if(path){
          this.$router.push(path);
        }else{
-         console.log('无效url');
+         console.log('无效url',path);
        }
 
     }

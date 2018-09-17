@@ -32,14 +32,6 @@
       {
         "id": 8,
         "parentId": 0,
-        "permissionName": "大A盘",
-        "permissionIcon": "shujudaping",
-        "permissionUrl": "/index",
-        "children":[]
-      },
-      {
-        "id": 8,
-        "parentId": 0,
         "permissionName": "大盘",
         "permissionIcon": "gaojinglishi",
         "permissionUrl": "/index",
@@ -223,6 +215,14 @@
             "children": []
           }
         ]
+      },
+      {
+        "id": 3,
+        "parentId": 0,
+        "permissionName": "大A盘",
+        "permissionIcon": "shujudaping",
+        "permissionUrl": "/home",
+        "children":[]
       }
     ]
   }

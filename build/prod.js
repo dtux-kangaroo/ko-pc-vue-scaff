@@ -106,8 +106,8 @@ module.exports = {
       hash: false,
       //chunksSortMode: "none",
       assets: {
-        favicon: '/images/favicon.ico',
-        config_js: '/conf/conf.dev.js'
+        favicon: '/assets/imgs/favicon.ico',
+        config_js: '/config/conf.dev.js'
       }
     }),
     new webpack.DefinePlugin({
@@ -115,12 +115,8 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       {
-        from:'./public/config',
-        to: './conf'
-      },
-      {
-        from: './public/mock',
-        to: './mock'
+        from:'./public',
+        to: './'
       }
     ])
   ],

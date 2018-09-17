@@ -12,9 +12,9 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-     path:'/',component:MainTpl,
+     path:'/index',component:MainTpl,
      children:[
-      {path: '/',name: 'home',component: Home},
+      {path: '/index',name: 'home',component: Home},
       {path: '/user',name: 'user',component: User},
       { path: '/404', component:tip404, hidden: true },
      ]
