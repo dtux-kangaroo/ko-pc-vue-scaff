@@ -7,36 +7,46 @@
     </el-menu>
 </template>
 <script>
- import SideItem from './sideItem'
-  export default {
-    components: { SideItem },
-    props: ['navData'],
-    mounted() {
-    },
-    data() {
-       let curPath=this.$router.currentRoute.path;
-        console.log(curPath,curPath);
-       return  {
+import SideItem from "./sideItem";
+export default {
+  components: { SideItem },
+  props: ["navData"],
+  mounted() {},
+  watch: {
+    $route: function(to, from) {
+      this.setItem();
+    }
+  },
+  data() {
+    let curPath = this.$router.currentRoute.path;
+    return {
       activeIndex: curPath,
-      openeds:curPath.match(/\/\w*/g),
-      };
-    },
-    methods: {
+      openeds: curPath.match(/\/\w*/g)
+    };
+  },
+
+  methods: {
+    setItem() {
+      let curPath = this.$router.currentRoute.path;
+      this.activeIndex = curPath;
+      this.openeds = curPath.match(/\/\w*/g);
     }
   }
+};
 </script>
 <style lang="scss">
- .side-nav{
-   text-align: left;
-   .iconfont{
-     font-size:18px;
-     margin-right: 5px;
-   }
-   .el-menu-item, .el-submenu__title{
-     height:40px !important;
-     line-height: 40px !important;
-   }
- }
+.side-nav {
+  text-align: left;
+  .iconfont {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+  .el-menu-item,
+  .el-submenu__title {
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
 </style>
 
 

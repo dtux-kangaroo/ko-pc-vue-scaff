@@ -22,8 +22,20 @@ export default new Router({
       {path: 'table',name: 'tabel',component: Table},
       {path: 'analysis',name: 'analysis',component: Analysis},
       {path: 'user',name: 'user',component: User},
-      { path: '404', component:tip404, hidden: true },
+      { path: '404',name:'404', component:tip404},
      ]
+    },
+    {
+      path:'/back',component:MainTpl,
+      children:[
+        {path: 'form',name: 'form',component: Analysis},
+      ]
+    },
+    {
+      path:'/part',component:MainTpl,
+      children:[
+        {path: 'draggable',name: 'draggable',component: Analysis},
+      ]
     },
     {path: '/login',name: 'login',component: Login},
     {path: '/',redirect: '/index'},

@@ -8,7 +8,7 @@
         "parentId": 1,
         "permissionName": "大盘",
         "permissionIcon": "",
-        "permissionUrl": "/index",
+        "permissionUrl": "/index/analysis",
         "children": []
       },
       {

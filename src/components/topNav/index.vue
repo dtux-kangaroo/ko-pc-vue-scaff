@@ -41,9 +41,19 @@ export default {
       Logo
     };
   },
+  watch: {
+    $route: function(to, from) {
+      this.setItem();
+    }
+  },
   methods: {
     loginOut() {
       this.$router.push("/login");
+    },
+    setItem() {
+      let routerArr = this.$router.currentRoute.path.match(/\/\w*/g);
+      this.activeIndex = routerArr[0];
+      this.openeds = [routerArr[0]];
     }
   }
 };

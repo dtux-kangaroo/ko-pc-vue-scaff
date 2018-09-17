@@ -11,7 +11,7 @@ module.exports = {
   mode: "production",
   context:path.resolve(__dirname, '../src'),
   entry: {
-    vendor: ['vue', 'vuex', 'vue-router'],
+    vendor: ['vue', 'vuex', 'vue-router','echarts'],
     app:['./index.js']
   },
   output: {
@@ -107,7 +107,7 @@ module.exports = {
       //chunksSortMode: "none",
       assets: {
         favicon: '/assets/imgs/favicon.ico',
-        config_js: '/config/conf.dev.js'
+        config_js: '/config/conf.prod.js'
       }
     }),
     new webpack.DefinePlugin({
@@ -124,7 +124,8 @@ module.exports = {
     extensions: ['.js', '.jsx', '.scss', '.css', '.vue','json'], //自动解析确定的扩展。覆盖原有扩展
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
+      '@public': path.resolve(__dirname, '../src/public')
     }
   },
   externals: {

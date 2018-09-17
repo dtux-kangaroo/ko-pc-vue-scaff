@@ -35,7 +35,6 @@ export default {
   methods: {
     redirec(path){
       if(path){
-         this.$root.Bus.$emit('change','1212');
          this.$router.push(path);
        }else{
          console.log('无效url',path);

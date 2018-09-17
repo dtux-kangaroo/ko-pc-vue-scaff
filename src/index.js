@@ -18,10 +18,13 @@ Vue.use(Element, {
 })
 Vue.use(Viser);
 Vue.config.productionTip = false
-
+const Bus = new Vue()
 new Vue({
   el: '#root',
   router,
+  data:{
+   Bus
+  },
   store,
   components: { globalTpl },
   template: '<globalTpl/>'
@@ -29,6 +32,5 @@ new Vue({
 
 if(module.hot) {
   module.hot.accept();
-
 
 }
