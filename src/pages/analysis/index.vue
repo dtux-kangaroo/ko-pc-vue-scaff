@@ -2,24 +2,34 @@
   <div>
     <div class="vux-home">
        this is analysis{{msg}}
-      <ChartLine></ChartLine>
+      <LineChart
+       :option="lineOption"
+       :config="{'handle':test}"
+       height="300px"></LineChart>
   </div>
   </div>
 </template>
 
 <script>
 import api from "@/api/index.js";
-import {ChartLine} from "@/components/chart/index"
+import {LineChart} from "@/components/chart/index"
+import {lineOption}from '@/constants/options'
 export default {
   components:{
-    ChartLine
+    LineChart
   },
   data () {
     return {
       msg: 'Hello World!analysis',
+      lineOption
     }
   },
   mounted() {
+  },
+  methods:{
+    test(e){
+     console.log(e,'item');
+    }
   }
 }
 </script>

@@ -64,7 +64,7 @@ export default {
     text-align: center;
     .content{
       background: #fff;
-      height:600px;
+      min-height:600px;
 
     }
   }

@@ -1,27 +1,49 @@
 <template>
   <div>
     <div class="vux-home">
-      home--主页{{msg}}
-      <ChartLine></ChartLine>
+      <LineChart
+       :option="lineOption"
+       :config="{'handle':test}"
+       height="300px"></LineChart>
+      <BarChart
+       :option="barOption"
+       :config="{'handle':test}"
+       height="300px"
+       ></BarChart>
+      <PieChart
+       :option="pieOption"
+       :config="{'handle':test}"
+       height="300px"
+       ></PieChart>
   </div>
   </div>
 </template>
 
 <script>
 import api from "@/api/index.js";
-import {ChartLine} from "@/components/chart/index"
+import {PieChart,BarChart,LineChart} from "@/components/chart/index"
+import {barOption,pieOption,lineOption}from '@/constants/options'
+
 export default {
   components:{
-    ChartLine
+    PieChart,
+    BarChart,
+    LineChart
   },
   data () {
     return {
       msg: 'Hello World!home',
+      barOption,
+      lineOption,
+      pieOption
     }
   },
-  mounted() {
-      //this.$store.dispatch('getNavData')
+methods:{
+  test(option){
+   console.log(option);
+   //可添加事件
   }
+}
 }
 </script>
 

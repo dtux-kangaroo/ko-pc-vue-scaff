@@ -16,11 +16,7 @@
 
 <script>
 import api from "@/api/index.js";
-import {ChartLine} from "@/components/chart/index"
 export default {
-  components:{
-    ChartLine
-  },
   data () {
     return {
       loginForm:{
