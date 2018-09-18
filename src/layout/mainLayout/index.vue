@@ -1,9 +1,9 @@
 <template>
     <el-container>
-      <el-header><TopNav :nav-data="navData.topNav" :userData="userData"/></el-header>
+      <el-header><TopBar :nav-data="navData.topNav" :userData="userData"/></el-header>
       <el-container>
         <el-aside width="200px">
-          <SideNav :nav-data="navData.sideNav"/>
+          <SideBar :nav-data="navData.sideNav"/>
         </el-aside>
         <el-container style="height:800px">
           <el-main>
@@ -20,12 +20,12 @@
 </template>
 <script>
 import Footer from '@/components/footer'
-import SideNav from '@/components/sideNav'
-import TopNav from '@/components/topNav'
+import SideBar from './sideBar'
+import TopBar from './topBar'
 import { mapState } from 'vuex'
 export default {
   name: "MainTpl",
-  components:{TopNav,Footer,SideNav},
+  components:{Footer,SideBar,TopBar},
   data() {
     return {
       msg: "layout",

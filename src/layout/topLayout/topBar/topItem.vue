@@ -15,9 +15,7 @@
               </template>
       </el-submenu>
 </template>
-
 <script>
-import path from 'path'
 export default {
   name: 'TopItem',
   components: {  },

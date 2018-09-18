@@ -6,11 +6,17 @@ const global = {
     navData:{
       topNav:[],
       sideNav:[]
+    },
+    sideBar:{
+      isFold:false
     }
   },
   mutations: {
-    GET_NAV_DATA: (state, navData) => {
-      state.navData = navData;
+    GET_NAV_DATA: (state, data) => {
+      state.navData = data;
+    },
+    TOGGLE_SIDE_BAR: (state, data) => {
+      state.sideBar.isFold =!state.sideBar.isFold;
     }
   },
   actions: {
@@ -19,6 +25,9 @@ const global = {
         console.log(ret);
         commit('GET_NAV_DATA', ret.data||[]);
       })
+   },
+   toggleSideBar({ commit }, params,cb) {
+     commit('TOGGLE_SIDE_BAR', );
    }
   }
 }

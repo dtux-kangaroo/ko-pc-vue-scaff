@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import tip404 from  '@/pages/error/404'
-import MainTpl from '@/tpls/mainTpl';
+import MainLayout from '@/layout/mainLayout';
+import SideLayout from '@/layout/sideLayout'
+import TopLayout from '@/layout/topLayout'
 import load from '@/components/load'
 import User from '@/pages/user';
 const Home = () => ({component: import('@/pages/home/index'),loading: load});
@@ -16,7 +18,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-     path:'/index',component:MainTpl,
+     path:'/index',component:SideLayout,
      children:[
       {path: '',name: 'home',component: Home},
       {path: 'table',name: 'tabel',component: Table},
@@ -26,13 +28,13 @@ export default new Router({
      ]
     },
     {
-      path:'/back',component:MainTpl,
+      path:'/back',component:MainLayout,
       children:[
         {path: 'form',name: 'form',component: Analysis},
       ]
     },
     {
-      path:'/part',component:MainTpl,
+      path:'/part',component:TopLayout,
       children:[
         {path: 'draggable',name: 'draggable',component: Analysis},
       ]

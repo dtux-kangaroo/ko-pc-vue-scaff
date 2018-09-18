@@ -1,23 +1,25 @@
 <template>
-        <el-menu-item  v-if="!nav.children.length" :index="nav.permissionUrl"
+        <el-menu-item  v-if="!nav.children.length" :index="nav.permissionUrl" class="sub-item"
          @click="redirec(nav.permissionUrl)">
-                 <i class="iconfont" :class="[`icon-${nav.permissionIcon}`]"></i> {{nav.permissionName}}
+                 <i class="iconfont" :class="[`icon-${nav.permissionIcon}`]"></i>
+                 <span>{{nav.permissionName}}</span>
         </el-menu-item>
        <el-submenu v-else  :index="nav.permissionUrl">
             <template slot="title">
-                <i class="iconfont" :class="[`icon-${nav.permissionIcon}`]"></i>{{nav.permissionName}}
+                <i class="iconfont" :class="[`icon-${nav.permissionIcon}`]"></i>
+                <span>{{nav.permissionName}}</span>
             </template>
               <template v-for="child in nav.children">
                     <el-menu-item :key="child.permissionUrl"  :index="child.permissionUrl"
                     @click="redirec(child.permissionUrl)">
-                      <i class="iconfont" :class="[`icon-${child.permissionIcon}`]"></i> {{child.permissionName}}
+                      <i class="iconfont" :class="[`icon-${child.permissionIcon}`]"></i>
+                      <span>{{child.permissionName}}</span>
                     </el-menu-item>
               </template>
       </el-submenu>
 </template>
 
 <script>
-import path from 'path'
 export default {
   name: 'SideItem',
   components: {  },
@@ -35,7 +37,6 @@ export default {
   methods: {
     redirec(path){
       if(path){
-         this.$root.Bus.$emit('change','1212');
          this.$router.push(path);
        }else{
          console.log('无效url',path);

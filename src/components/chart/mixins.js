@@ -6,10 +6,25 @@ export default {
       if (this.chart) {
         this.chart.resize()
       }
-    }, 100)
-    window.addEventListener('resize', this._resizeHandler)
+    }, 200)
+
+    window.addEventListener('resize', this._resizeHandler);
+    const element = document.getElementById('side-nav')
+    if(!element)return;
+    element.addEventListener('transitionend', this.sidebarResizeHandler)
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this._resizeHandler)
+    window.removeEventListener('resize', this._resizeHandler);
+    const element = document.getElementById('side-nav')
+    if(!element)return;
+    element.removeEventListener('transitionend', this.sidebarResizeHandler)
+  },
+  methods:{
+    sidebarResizeHandler(e) {
+      if (e.propertyName === 'width') {
+        this._resizeHandler()
+      }
+    }
   }
+
 }

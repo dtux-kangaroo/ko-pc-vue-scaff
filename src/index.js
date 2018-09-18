@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import globalTpl from '@/tpls/globalTpl.vue'
+import GlobalLayout from '@/layout/globalLayout'
 import router from '@/router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -26,8 +26,8 @@ new Vue({
    Bus
   },
   store,
-  components: { globalTpl },
-  template: '<globalTpl/>'
+  components: { GlobalLayout },
+  template: '<GlobalLayout/>'
 })
 
 if(module.hot) {

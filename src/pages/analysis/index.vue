@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="vux-home">
-       this is analysis{{msg}}
+       this is analysis{{msg}} {{8002111|toThousandslsFilter}}
       <LineChart
        :option="lineOption"
        :config="{'handle':test}"
