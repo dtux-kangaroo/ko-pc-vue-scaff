@@ -13,6 +13,7 @@ export default {
    .bat-footer{
      text-align: center;
      padding: 20px 0px;
+    background:#ddd;
    }
 </style>
 

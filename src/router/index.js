@@ -18,7 +18,7 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-     path:'/index',component:SideLayout,
+     path:'/index',component:MainLayout,
      children:[
       {path: '',name: 'home',component: Home},
       {path: 'table',name: 'tabel',component: Table},
@@ -34,7 +34,7 @@ export default new Router({
       ]
     },
     {
-      path:'/part',component:TopLayout,
+      path:'/part',component:MainLayout,
       children:[
         {path: 'draggable',name: 'draggable',component: Analysis},
       ]

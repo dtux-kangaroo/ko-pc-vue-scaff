@@ -70,6 +70,7 @@ export default {
 }
 .el-footer {
   background: #f0f2f5;
+   padding:0px !important;
 }
 .side-left {
   margin-left: 200px;

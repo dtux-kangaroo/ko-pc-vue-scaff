@@ -68,5 +68,6 @@ export default {
   }
   .el-footer{
     background: #f0f2f5;
+    padding:0px !important;
   }
 </style>
