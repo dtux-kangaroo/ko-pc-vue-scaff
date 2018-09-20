@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import page404 from '@public/assets/imgs/404.jpeg'
+import page404 from '@public/assets/imgs/404.jpg'
 export default {
  data(){
    return {

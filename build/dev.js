@@ -61,7 +61,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template:"index.ejs",
+      template:"index.html",
       hash: false,
       chunksSortMode: "none",
       assets: {
@@ -95,7 +95,7 @@ module.exports = {
     compress: true,
     hot: true,
     historyApiFallback: true,
-    port: 8090,
+    port: 8099,
     host: "127.0.0.1",
     // proxy: [{
     //   context: ['/auth', '/api'],

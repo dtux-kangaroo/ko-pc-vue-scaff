@@ -46,8 +46,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|png|gif)$/,
-        use: 'file-loader?name=images/[hash:8].[name].[ext]'
+        test: /\.(jpg|png|gif|jpeg)$/,
+        use: 'file-loader?name=imgs/[hash:8].[name].[ext]'
       },
       {
         test: /\.(eot|woff|svg|ttf|woff2|gif|appcache|webp)(\?|$)/,
@@ -102,7 +102,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.ejs',
+      template: 'index.html',
       hash: false,
       //chunksSortMode: "none",
       assets: {
