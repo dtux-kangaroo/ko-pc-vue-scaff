@@ -21,6 +21,6 @@ npm run build
 ````
 ```
 #主要技术
-vue2,vuex,webpack ,vue-router,element-ui,axios,viser--图表，scss
+vue2,vuex,webpack4 ,babel7,vue-router,element-ui,axios,echarts--图表，scss
 
 ```
