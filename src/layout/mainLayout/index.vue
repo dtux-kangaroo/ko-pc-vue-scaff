@@ -1,50 +1,34 @@
 <template>
     <el-container>
-      <el-header><TopBar :nav-data="navData.topNav" :userData="userData"/></el-header>
-      <el-container>
-        <el-aside width="200px">
-          <SideBar :nav-data="navData.sideNav"/>
-        </el-aside>
-        <el-container style="height:800px">
-          <el-main>
-            <div class="content">
-            <router-view></router-view>
-            </div>
-          </el-main>
-          <el-footer>
-            <Footer/>
-          </el-footer>
-        </el-container>
-      </el-container>
+      <el-header><TopBar :nav-data="navData" :userData="userData"/></el-header>
+         <el-main style="padding:0px">
+               <router-view></router-view>
+         </el-main>
     </el-container>
 </template>
 <script>
 import Footer from '@/components/footer'
-import SideBar from './sideBar'
 import TopBar from './topBar'
 import { mapState } from 'vuex'
 export default {
-  name: "MainTpl",
-  components:{Footer,SideBar,TopBar},
+  components:{Footer,TopBar},
   data() {
     return {
       msg: "layout",
       userData:{
         name:'dtux',
         phone:'13099999999'
-      }
+      },
+      sideData:[]
     };
   },
   mounted() {
       this.$store.dispatch('getNavData');
   },
   beforeUpdate(){
-    console.log(this.navData,'data');
+    console.log(this.navData,'navData');
   },
   methods: {
-    redirect(){
-      console.log(1213);
-    }
   },
   computed: mapState({
     navData: state => state.global.navData
@@ -54,8 +38,9 @@ export default {
 
 <style lang="scss">
   .el-header {
-    background-color: #1A76D2;
-    line-height: 60px;
+    background: #001529;
+    height:54px !important;
+    line-height: 54px;
   }
 
   .el-aside {
@@ -72,6 +57,7 @@ export default {
 
     }
   }
+
   .el-footer{
     background: #f0f2f5;
     padding:0px !important;

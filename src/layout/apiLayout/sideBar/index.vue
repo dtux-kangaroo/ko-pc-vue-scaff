@@ -1,7 +1,6 @@
 <template>
     <el-menu
       :default-active="activeIndex"
-      :default-openeds="openeds"
       class="side-nav">
        <side-item v-for="nav in navData" :key="nav.name" :nav="nav"/>
     </el-menu>
@@ -11,17 +10,20 @@ import SideItem from "./sideItem";
 export default {
   components: { SideItem },
   props: ["navData"],
-  mounted() {},
+  mounted() {
+
+  },
   watch: {
     $route: function(to, from) {
       this.setItem();
     }
   },
+  beforeUpdate(){
+  },
   data() {
-    let curPath = this.$router.currentRoute.path;
+    let curPath = this.$route.path;
     return {
-      activeIndex: curPath,
-      openeds: curPath.match(/\/\w*/g)
+      activeIndex: curPath
     };
   },
 
@@ -48,6 +50,8 @@ export default {
   }
 }
 </style>
+
+
 
 
 

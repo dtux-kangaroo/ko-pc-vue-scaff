@@ -1,46 +1,88 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import tip404 from  '@/pages/error/404'
+import Tip404 from '@/pages/error/404'
 import MainLayout from '@/layout/mainLayout';
-import SideLayout from '@/layout/sideLayout'
-import TopLayout from '@/layout/topLayout'
+import ApiLayout from '@/layout/apiLayout';
 import load from '@/components/load'
-import User from '@/pages/user';
-const Home = () => ({component: import('@/pages/home/index'),loading: load});
-const Login =()=>({component: import('@/pages/login'),loading: load})
-const Table =()=>({component: import('@/pages/table'),loading: load})
-const Analysis =()=>({component: import('@/pages/analysis'),loading: load})
-
-
+const Home = () => ({
+  component: import('@/pages/home/index'),
+  loading: load
+});
+const Login = () => ({
+  component: import('@/pages/login'),
+  loading: load
+})
+import AllApi from '@/pages/api/allApi'
+import InnerOrOuter from '@/pages/api/allApi/innerOrOuter'
+import Publish from '@/pages/api/publish'
+import Export from '@/pages/api/export'
 
 Vue.use(Router)
 export default new Router({
   mode: 'history',
-  routes: [
-    {
-     path:'/index',component:MainLayout,
-     children:[
-      {path: '',name: 'home',component: Home},
-      {path: 'table',name: 'tabel',component: Table},
-      {path: 'analysis',name: 'analysis',component: Analysis},
-      {path: 'user',name: 'user',component: User},
-      { path: '404',name:'404', component:tip404},
-     ]
+  routes: [{
+      path: '/',
+      component: MainLayout,
+      children: [{
+        path: '',
+        name: 'home',
+        component: Home
+      },
+      {
+        path: '/api',
+        component:ApiLayout ,
+        children: [{
+            path: 'all',
+            name: 'all',
+            component: AllApi,
+            children: [{
+                path: 'inner',
+                name: 'inner',
+                component: InnerOrOuter
+              },
+              {
+                path: 'outer',
+                name: 'outer',
+                component: InnerOrOuter
+              },
+              {
+                path: 'serverDetail',
+                name: 'serverDetail',
+                component: InnerOrOuter
+              }
+            ]
+          },
+          {
+            path: 'publish',
+            name: 'publish',
+            component: Publish,
+          },
+          {
+            path: 'export',
+            name: 'export',
+            component: Export,
+          }
+        ]
+      },
+    ]
     },
     {
-      path:'/back',component:MainLayout,
-      children:[
-        {path: 'form',name: 'form',component: Analysis},
-      ]
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
-      path:'/part',component:MainLayout,
-      children:[
-        {path: 'draggable',name: 'draggable',component: Analysis},
-      ]
+      path: '/404',
+      name: 'tip404',
+      component: Tip404
     },
-    {path: '/login',name: 'login',component: Login},
-    {path: '/',redirect: '/index'},
-    { path: '*', redirect: '/index/404'}
+    {
+      path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '*',
+      redirect: '/404'
+    }
   ]
 })

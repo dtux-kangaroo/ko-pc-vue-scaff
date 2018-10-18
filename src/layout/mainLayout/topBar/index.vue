@@ -8,22 +8,27 @@
     <div class="fl">
       <el-menu class="top-nav"
        :default-active="activeIndex"
-       :default-openeds="openeds"
+       :router="true"
        mode="horizontal">
-          <top-item v-for="nav in navData" :key="nav.name" :nav="nav"/>
+            <el-menu-item v-if="navData.length" v-for="nav in navData" :key="nav.permissionName"  :index="nav.permissionUrl.match(/\/\w*/g)[0]"
+                @click="redirec(nav.permissionUrl)">
+                 {{nav.permissionName}}
+             </el-menu-item>
       </el-menu>
     </div>
-    <div class='fr'>
-      <el-dropdown>
-          <span class="el-dropdown-link">
-            <i class="iconfont  icon-guanliyuan2"/>
-           {{userData.name}}
-            <i class="el-icon-arrow-down el-icon--right"></i>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item><span @click="loginOut">退出</span></el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
+    <div class='fr top-user' >
+        <div class="top-badge">
+          <i class="iconfont icon-youxiang"></i>
+          <sup>121236</sup>
+        </div>
+        <i class="iconfont icon-split"></i>
+        <span>
+          个人中心
+        </span>
+        <i class="iconfont icon-split"></i>
+        <span @click="loginOut">
+          退出
+        </span>
     </div>
   </div>
 </template>
@@ -34,11 +39,11 @@ export default {
   components: { TopItem },
   props: ["navData", "userData"],
   data() {
-    let routerArr = this.$router.currentRoute.path.match(/\/\w*/g);
+    let routerArr = this.$route.path.match(/\/\w*/g);
     return {
       activeIndex: routerArr[0],
-      openeds: [routerArr[0]],
-      Logo
+      Logo,
+      currentUserName:'charles'
     };
   },
   watch: {
@@ -50,10 +55,16 @@ export default {
     loginOut() {
       this.$router.push("/login");
     },
+    redirec(path) {
+      if (path) {
+        this.$router.push(path);
+      } else {
+        console.log("无效url", path);
+      }
+    },
     setItem() {
-      let routerArr = this.$router.currentRoute.path.match(/\/\w*/g);
+      let routerArr = this.$route.path.match(/\/\w*/g);
       this.activeIndex = routerArr[0];
-      this.openeds = [routerArr[0]];
     }
   }
 };
@@ -62,11 +73,15 @@ export default {
 .logo {
   width: 160px;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .el-menu--horizontal > .el-menu-item:not(.is-disabled):hover {
   background-color: #409eff !important;
   color: #fff;
+}
+.el-menu--horizontal>.el-menu-item{
+    height: 54px;
+    line-height: 54px;
 }
 .top-nav {
   background: transparent;
@@ -80,11 +95,29 @@ export default {
     color: #fff !important;
   }
 }
-.el-dropdown {
-  color: #fff;
-  cursor: pointer;
-  .iconfont {
-    font-size: 18px;
+.top-user{
+ font-size:14px;
+ color:#fff;
+ .top-badge{
+   display: inline-block;
+   position: relative;
+   sup{
+    background-color: #f56c6c;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px;
+    padding: 0 6px;
+    text-align: center;
+    white-space: nowrap;
+    position: absolute;
+    top: 4px;
+    left: 10px;
   }
+ }
 }
+
+
 </style>

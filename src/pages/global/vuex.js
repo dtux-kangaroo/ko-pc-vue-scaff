@@ -3,10 +3,7 @@ import api from "@/api/index.js";
 
 const global = {
   state: {
-    navData:{
-      topNav:[],
-      sideNav:[]
-    },
+    navData:[],
     sideBar:{
       isFold:false
     }
@@ -22,8 +19,7 @@ const global = {
   actions: {
     getNavData({ commit }, params,cb) {
       api.getNavData({}).then(ret=>{
-        console.log(ret);
-        commit('GET_NAV_DATA', ret.data||[]);
+        commit('GET_NAV_DATA', ret.data.topNav||[]);
       })
    },
    toggleSideBar({ commit }, params,cb) {

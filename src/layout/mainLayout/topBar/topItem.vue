@@ -1,9 +1,9 @@
 <template>
-        <el-menu-item  v-if="!nav.children.length" :index="nav.permissionUrl.match(/\/\w*/g)[0]"
+        <el-menu-item  :index="nav.permissionUrl"
          @click="redirec(nav.permissionUrl)">
                  {{nav.permissionName}}
         </el-menu-item>
-       <el-submenu v-else  :index="nav.permissionUrl.match(/\/\w*/g)[0]">
+       <!-- <el-submenu v-else  :index="nav.permissionUrl.match(/\/\w*/g)[0]">
             <template slot="title">
                {{nav.permissionName}}
             </template>
@@ -13,7 +13,7 @@
                      {{child.permissionName}}
                     </el-menu-item>
               </template>
-      </el-submenu>
+      </el-submenu> -->
 </template>
 
 <script>
@@ -21,12 +21,7 @@ import path from 'path'
 export default {
   name: 'TopItem',
   components: {  },
-  props: {
-    nav: {
-      type: Object,
-      required: true
-    }
-  },
+  props: ["nav"],
   data() {
     return {
       onlyOneChild: null
