@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import api from "@/api/index.js";
+import { API } from "@/api/index.js";
 import {LineChart} from "@/components/chart/index"
 import {lineOption}from '@/constants/options'
 export default {

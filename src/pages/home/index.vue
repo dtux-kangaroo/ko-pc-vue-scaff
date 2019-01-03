@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import api from "@/api/index.js";
+import { API } from "@/api/index.js";
 import {PieChart,BarChart,LineChart} from "@/components/chart/index"
 import {barOption,pieOption,lineOption}from '@/constants/options'
 

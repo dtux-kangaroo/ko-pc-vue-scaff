@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import api from "@/api/index.js";
+import { API } from "@/api/index.js";
 export default {
   data () {
     return {
