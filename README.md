@@ -21,9 +21,9 @@ npm install -g ko-script
  ```js
  1.ko dll  //生成动态链接库文件
 
- 1.ko dev //启动开发环境
+ 2.ko dev //启动开发环境
 
- 2.ko build //打包静态文件
+ 3.ko build //打包静态文件
 
  ```
 
