@@ -1,4 +1,4 @@
-import api from "@/api/index.js";
+import { API } from "@/api/index.js";
 
 
 const user = {
@@ -12,8 +12,7 @@ const user = {
   },
   actions: {
     getUserData({ commit }, params,cb) {
-        api.getUserData({}).then(ret=>{
-          console.log(ret);
+      API.getUserData({}).then(ret=>{
           commit('GET_USER_DATA', ret.data||[]);
         })
      }

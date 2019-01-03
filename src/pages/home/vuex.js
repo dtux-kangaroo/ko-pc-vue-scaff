@@ -1,4 +1,4 @@
-import api from "@/api/index.js";
+import { API } from "@/api/index.js";
 
 
 const home = {
@@ -12,8 +12,7 @@ const home = {
   },
   actions: {
     getHomeData({ commit }, params,cb) {
-        api.getHomeData({}).then(ret=>{
-          console.log(ret);
+      API.getHomeData({}).then(ret=>{
           commit('GET_HOME_DATA', ret.data||[]);
         })
      }

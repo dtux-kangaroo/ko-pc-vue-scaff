@@ -1,4 +1,4 @@
-import api from "@/api/index.js";
+import { API } from "@/api/index.js";
 
 
 const global = {
@@ -18,7 +18,7 @@ const global = {
   },
   actions: {
     getNavData({ commit }, params,cb) {
-      api.getNavData({}).then(ret=>{
+      API.getNavData({}).then(ret=>{
         commit('GET_NAV_DATA', ret.data.topNav||[]);
       })
    },
