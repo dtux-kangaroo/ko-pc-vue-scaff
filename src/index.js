@@ -3,8 +3,9 @@ import GlobalLayout from '@/layout/globalLayout'
 import router from '@/router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import '@/public/assets/styles/index.scss'
+import '@public/assets/styles/index.scss'
 import store from './store/index'
+import '@babel/polyfill'
 import Viser from 'viser-vue' //图表库引入
 
 
@@ -23,7 +24,7 @@ new Vue({
   el: '#root',
   router,
   data:{
-   Bus
+   Bus 
   },
   store,
   components: { GlobalLayout },

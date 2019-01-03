@@ -1,26 +1,32 @@
-# pc-vue
 
-> A Vue.js project
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+## 项目说明
+1、 使用技术
+```text
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-## 技术概览
-```
-# 使用UI库
-[element-ui](https://vux.li/)
-````
-```
-#主要技术
-vue2,vuex,webpack4 ,babel7,vue-router,element-ui,axios,echarts--图表，scss
+ 热更新、ES6/7、scss、bable7,vue-route、vue、vuex、webpack4、async／await、前端node服务器，按需加载...
 
 ```
+
+2、 安装依赖包。
+```
+npm install  或者cnpm install 或者yarn(推荐)
+
+npm install -g ko-script 
+
+```
+
+3、运行脚手架。
+ ```js
+ 1.ko dll  //生成动态链接库文件
+
+ 1.ko dev //启动开发环境
+
+ 2.ko build //打包静态文件
+
+ ```
+
+4、ko-script  详细使用 [参考](https://www.npmjs.com/package/ko-script) 
+
+
