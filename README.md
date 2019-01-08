@@ -25,6 +25,8 @@ npm install -g ko-script
 
  3.ko build //打包静态文件
 
+ 4.ko preview //预览编译后项目静态文件
+
  ```
 
 4、ko-script  详细使用 [参考](https://www.npmjs.com/package/ko-script) 
