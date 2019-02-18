@@ -19,13 +19,13 @@ npm install -g ko-script
 
 3、运行脚手架。
  ```js
- 1.ko dll  //生成动态链接库文件
+ 1.npm run dll  //生成动态链接库文件
 
- 2.ko dev //启动开发环境
+ 2.npm run dev //启动开发环境
 
- 3.ko build //打包静态文件
+ 3.npm run build //打包静态文件
 
- 4.ko preview //预览编译后项目静态文件
+ 4.npm run preview //预览编译后项目静态文件
 
  ```
 
