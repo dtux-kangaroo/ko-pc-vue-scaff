@@ -13,8 +13,6 @@
 ```
 npm install  或者cnpm install 或者yarn(推荐)
 
-npm install -g ko-script 
-
 ```
 
 3、运行脚手架。
