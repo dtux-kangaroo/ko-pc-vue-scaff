@@ -1,5 +1,5 @@
 <template>
-   <div>
+   <div class="not-found">
      <img :src="page404" alt="404"/>
      <div>查看页面不存在，<span class="back-tip" @click="redirct">返回</span></div>
    </div>
@@ -22,6 +22,11 @@ export default {
 </script>
 
 <style>
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .back-tip{
  cursor: pointer;
  color:lightblue;

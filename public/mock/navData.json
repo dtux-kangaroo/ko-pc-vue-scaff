@@ -58,30 +58,6 @@
           }
         ]
 
-      },
-      {
-        "id": 3,
-        "parentId": 1,
-        "permissionName": "后台管理",
-        "permissionIcon": "",
-        "permissionUrl": "/back/form",
-        "children": []
-      },
-      {
-        "id": 3,
-        "parentId": 1,
-        "permissionName": "技术支持",
-        "permissionIcon": "",
-        "permissionUrl": "/back/form",
-        "children": []
-      },
-      {
-        "id": 3,
-        "parentId": 1,
-        "permissionName": "论坛",
-        "permissionIcon": "",
-        "permissionUrl": "/back/form",
-        "children": []
       }
     ]
   }

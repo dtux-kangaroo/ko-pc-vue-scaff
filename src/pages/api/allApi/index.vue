@@ -1,12 +1,12 @@
 <template>
 <div>
-  <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit" @tab-click="clickTab">
+  <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit">
   <el-tab-pane
     :key="item.name"
     v-for="(item, index) in editableTabs"
     :label="item.title"
     :name="item.name"
-  >
+  >{{item.content}}
   </el-tab-pane>
 </el-tabs>
   <div>
@@ -33,15 +33,15 @@ export default {
       editableTabs: [
         {
           title: "Tab 1",
-          path: "/index/tabel",
+          path: "/api/all/outer",
           name: "1",
-          content: ""
+          content: "123"
         },
         {
           title: "Tab 2",
-          path: "/index/tabel",
+          path: "/api/all/outer",
           name: "2",
-          content: ""
+          content: "456"
         }
       ],
       tabIndex: 2
