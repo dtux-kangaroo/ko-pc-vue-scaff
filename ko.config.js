@@ -22,7 +22,7 @@ module.exports = (context) => {
           'vue$': 'vue/dist/vue.esm.js',
           '@': path.resolve(__dirname, 'src'),
           '@public': path.resolve(__dirname, 'public'),
-          '@nm': path.resolve(__dirname, 'node_modules')
+          '@nm': path.resolve(__dirname, 'node_modules') 
         }
       },
       externals :{
