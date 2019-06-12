@@ -24,3 +24,5 @@ npm run build
 vue2,vuex,webpack4 ,babel7,vue-router,element-ui,axios,echarts--图表，scss
 
 ```
+## 本地代理
+查看build文件夹下 dev.js中webpack配置 
