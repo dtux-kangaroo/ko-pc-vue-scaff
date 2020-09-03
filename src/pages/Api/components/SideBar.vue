@@ -1,8 +1,9 @@
 <template>
     <el-menu
       :default-active="activeIndex"
-      class="side-nav">
-       <side-item v-for="nav in navData" :key="nav.name" :nav="nav"/>
+      class="side-nav"
+    >
+      <side-item v-for="nav in navData" :key="nav.name" :nav="nav"/>
     </el-menu>
 </template>
 <script>

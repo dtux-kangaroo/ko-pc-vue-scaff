@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Tip404 from '@/pages/error/404'
+import Tip404 from '@/pages/exception/404'
 import MainLayout from '@/layout/MainLayout';
-import ApiLayout from '@/layout/ApiLayout';
+import ApiLayout from '@/pages/Api';
 import Load from '@/components/Load'
 const Home = () => ({
   component: import('@/pages/Home'),
@@ -12,10 +12,10 @@ const Login = () => ({
   component: import('@/pages/Login'),
   loading: Load
 })
-import AllApi from '@/pages/api/allApi'
-import InnerOrOuter from '@/pages/api/allApi/innerOrOuter'
-import Publish from '@/pages/api/publish'
-import Export from '@/pages/api/export'
+import AllApi from '@/pages/Api/components/AllApi';
+import InnerOrOuter from '@/pages/Api/components/InnerOrOuter'
+import Publish from '@/pages/Api/components/Publish'
+import Export from '@/pages/Api/components/Export'
 
 Vue.use(Router)
 export default new Router({

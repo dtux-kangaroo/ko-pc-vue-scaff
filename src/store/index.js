@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import global from './global/vuex'
 import home from '@/pages/Home/vuex'
-import user from '@/pages/user/vuex'
+import user from '@/pages/User/vuex'
 import getters from './getters'
 
 Vue.use(Vuex)

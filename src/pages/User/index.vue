@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="vux-home">
-       this is table{{msg}}
+      user--主页{{msg}}
   </div>
   </div>
 </template>
@@ -9,13 +9,13 @@
 <script>
 import { API } from "@/services/index.js";
 export default {
-
   data () {
     return {
-      msg: 'Hello World!table',
+      msg: 'Hello World!home',
     }
   },
   mounted() {
+      //this.$store.dispatch('getNavData')
   }
 }
 </script>

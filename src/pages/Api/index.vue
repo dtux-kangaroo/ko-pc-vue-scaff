@@ -5,12 +5,12 @@
           <SideBar :nav-data="navData" />
         </el-aside>
           <el-main  style="min-height:800px;padding:0px;background:#fff;">
-             <router-view></router-view>
+            <router-view></router-view>
           </el-main>
         </el-container>
 </template>
 <script>
-import SideBar from "./SideBar";
+import SideBar from "./components/SideBar";
 import { mapState } from 'vuex'
 export default {
   components: { SideBar },

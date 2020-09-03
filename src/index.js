@@ -33,5 +33,4 @@ new Vue({
 
 if(module.hot) {
   module.hot.accept();
-
 }

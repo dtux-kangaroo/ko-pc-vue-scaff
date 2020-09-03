@@ -29,8 +29,7 @@ export default {
   beforeUpdate(){
     console.log(this.navData,'navData');
   },
-  methods: {
-  },
+  methods: {},
   computed: mapState({
     navData: state => state.global.navData
   })
