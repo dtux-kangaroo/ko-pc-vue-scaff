@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Tip404 from '@/pages/error/404'
-import MainLayout from '@/layout/mainLayout';
-import ApiLayout from '@/layout/apiLayout';
-import load from '@/components/load'
+import MainLayout from '@/layout/MainLayout';
+import ApiLayout from '@/layout/ApiLayout';
+import Load from '@/components/Load'
 const Home = () => ({
-  component: import('@/pages/home/index'),
-  loading: load
+  component: import('@/pages/Home'),
+  loading: Load
 });
 const Login = () => ({
-  component: import('@/pages/login'),
-  loading: load
+  component: import('@/pages/Login'),
+  loading: Load
 })
 import AllApi from '@/pages/api/allApi'
 import InnerOrOuter from '@/pages/api/allApi/innerOrOuter'
@@ -20,14 +20,16 @@ import Export from '@/pages/api/export'
 Vue.use(Router)
 export default new Router({
   mode: 'history',
-  routes: [{
+  routes: [
+    {
       path: '/',
       component: MainLayout,
-      children: [{
-        path: '',
-        name: 'home',
-        component: Home
-      },
+      children: [
+        {
+          path: '',
+          name: 'home',
+          component: Home
+        },
       {
         path: '/api',
         component:ApiLayout ,

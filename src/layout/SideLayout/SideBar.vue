@@ -1,44 +1,35 @@
 <template>
     <el-menu
       :default-active="activeIndex"
+      :default-openeds="openeds"
+      :collapse="isCollapse"
       class="side-nav">
        <side-item v-for="nav in navData" :key="nav.name" :nav="nav"/>
     </el-menu>
 </template>
 <script>
-import SideItem from "./sideItem";
+import SideItem from "./SideItem";
+import { mapState } from "vuex";
 export default {
   components: { SideItem },
   props: ["navData"],
   mounted() {
-
   },
-  watch: {
-    $route: function(to, from) {
-      this.setItem();
-    }
-  },
-  beforeUpdate(){
-  },
+  computed: mapState({
+    isCollapse: state => state.global.sideBar.isFold
+  }),
   data() {
-    let curPath = this.$route.path;
+    let curPath = this.$router.currentRoute.path;
     return {
-      activeIndex: curPath
+      activeIndex: curPath,
+      openeds: curPath.match(/\/\w*/g)
     };
   },
-
-  methods: {
-    setItem() {
-      let curPath = this.$router.currentRoute.path;
-      this.activeIndex = curPath;
-      this.openeds = curPath.match(/\/\w*/g);
-    }
-  }
+  methods: {}
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .side-nav {
-  text-align: left;
   .iconfont {
     font-size: 18px;
     margin-right: 5px;
@@ -50,8 +41,6 @@ export default {
   }
 }
 </style>
-
-
 
 
 

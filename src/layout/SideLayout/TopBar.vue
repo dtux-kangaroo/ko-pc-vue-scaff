@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Hamburger from '@/components/hamburger'
+import Hamburger from '@/components/Hamburger'
 import { mapState } from 'vuex'
 export default {
   props: ["userData"],

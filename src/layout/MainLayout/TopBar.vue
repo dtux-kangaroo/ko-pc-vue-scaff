@@ -2,18 +2,18 @@
 <div>
     <div class='fl' style="width:200px">
       <router-link to="/">
-       <img :src="Logo" alt="logo" class="logo">
-      </router-link>
+        <img :src="Logo" alt="logo" class="logo">
+        </router-link>
     </div>
     <div class="fl">
       <el-menu class="top-nav"
        :default-active="activeIndex"
        :router="true"
        mode="horizontal">
-            <el-menu-item v-if="navData.length" v-for="nav in navData" :key="nav.permissionName"  :index="nav.permissionUrl.match(/\/\w*/g)[0]"
-                @click="redirec(nav.permissionUrl)">
-                 {{nav.permissionName}}
-             </el-menu-item>
+        <el-menu-item v-if="navData.length" v-for="nav in navData" :key="nav.permissionName"  :index="nav.permissionUrl.match(/\/\w*/g)[0]"
+            @click="redirec(nav.permissionUrl)">
+              {{nav.permissionName}}
+          </el-menu-item>
       </el-menu>
     </div>
     <div class='fr top-user' >
@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import TopItem from "./topItem";
+import TopItem from "./TopItem";
 import Logo from "@public/assets/imgs/logo.png";
 export default {
   components: { TopItem },
@@ -62,7 +62,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .logo {
-  width: 160px;
+  width: auto;
   height: 40px;
   margin-top: 6px;
 }

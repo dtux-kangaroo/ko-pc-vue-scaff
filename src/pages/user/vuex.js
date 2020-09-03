@@ -1,4 +1,4 @@
-import { API } from "@/api/index.js";
+import { API } from "@/services/index.js";
 
 
 const user = {

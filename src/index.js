@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import GlobalLayout from '@/layout/globalLayout'
+import GlobalLayout from '@/layout/GlobalLayout'
 import router from '@/router'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -9,7 +9,7 @@ import '@babel/polyfill'
 import Viser from 'viser-vue' //图表库引入
 
 
-import * as filters from './filters'
+import * as filters from './filters/number-formatter'
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })

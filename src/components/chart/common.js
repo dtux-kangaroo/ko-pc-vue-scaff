@@ -1,4 +1,4 @@
-import walden from '../../constants/walden'
+import walden from '@/constants/walden'
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/component/grid';
 import 'echarts/lib/component/markLine'

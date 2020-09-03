@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import global from '@/pages/global/vuex'
-import home from '@/pages/home/vuex'
+import global from './global/vuex'
+import home from '@/pages/Home/vuex'
 import user from '@/pages/user/vuex'
 import getters from './getters'
 

@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import TopItem from "./topItem";
+import TopItem from "./TopItem";
 import Logo from "@public/assets/imgs/logo.png";
 export default {
   components: { TopItem },

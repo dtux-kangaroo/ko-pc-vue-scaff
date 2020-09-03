@@ -1,6 +1,6 @@
-import LineChart from './lineChart'
-import BarChart from './barChart'
-import PieChart from './pieChart'
+import LineChart from './LineChart'
+import BarChart from './BarChart'
+import PieChart from './PieChart'
 export {
   LineChart,
   BarChart,
