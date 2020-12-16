@@ -1,7 +1,7 @@
 <template>
-<div>
-  <!-- <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit"> -->
-  <!-- <el-tab-pane
+  <div>
+    <!-- <el-tabs v-model="editableTabsValue" type="card" editable @edit="handleTabsEdit"> -->
+    <!-- <el-tab-pane
     :key="item.name"
     v-for="(item, index) in editableTabs"
     :label="item.title"
@@ -9,11 +9,10 @@
   >{{item.content}}
   </el-tab-pane>
 </el-tabs> -->
-  <div>
-    <router-view></router-view>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
-</div>
-
 </template>
 <script>
 import { PieChart, BarChart, LineChart } from "@/components/chart/index";
@@ -22,7 +21,7 @@ export default {
   components: {
     PieChart,
     BarChart,
-    LineChart
+    LineChart,
   },
   data() {
     return {
@@ -35,21 +34,21 @@ export default {
           title: "Tab 1",
           path: "/api/all/outer",
           name: "1",
-          content: "123"
+          content: "123",
         },
         {
           title: "Tab 2",
           path: "/api/all/outer",
           name: "2",
-          content: "456"
-        }
+          content: "456",
+        },
       ],
-      tabIndex: 2
+      tabIndex: 2,
     };
   },
   methods: {
-    clickTab(e){
-        this.$router.push('/api/all/innerOrOuter');
+    clickTab(e) {
+      this.$router.push("/api/all/innerOrOuter");
     },
     handleTabsEdit(targetName, action) {
       if (action === "add") {
@@ -57,7 +56,7 @@ export default {
         this.editableTabs.push({
           title: "New Tab",
           name: newTabName,
-          content: "New Tab content"
+          content: "New Tab content",
         });
         this.editableTabsValue = newTabName;
       }
@@ -77,9 +76,9 @@ export default {
         }
 
         this.editableTabsValue = activeName;
-        this.editableTabs = tabs.filter(tab => tab.name !== targetName);
+        this.editableTabs = tabs.filter((tab) => tab.name !== targetName);
       }
-    }
-  }
+    },
+  },
 };
 </script>

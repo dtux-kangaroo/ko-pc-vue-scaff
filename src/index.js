@@ -1,36 +1,35 @@
-import Vue from 'vue'
-import GlobalLayout from '@/layout/GlobalLayout'
-import router from '@/router'
-import Element from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
-import '@public/assets/styles/index.scss'
-import store from './store/index'
-import '@babel/polyfill'
-import Viser from 'viser-vue' //图表库引入
+import Vue from "vue";
+import GlobalLayout from "@/layout/GlobalLayout";
+import router from "@/router";
+import Element from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+import "@public/assets/styles/index.scss";
+import store from "./store/index";
+import "@babel/polyfill";
+import Viser from "viser-vue"; //图表库引入
 
-
-import * as filters from './filters/number-formatter'
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
+import * as filters from "./filters/number-formatter";
+Object.keys(filters).forEach((key) => {
+  Vue.filter(key, filters[key]);
+});
 
 Vue.use(Element, {
-  size: 'medium', // set element-ui default size
-})
+  size: "medium", // set element-ui default size
+});
 Vue.use(Viser);
-Vue.config.productionTip = false
-const Bus = new Vue()
+Vue.config.productionTip = false;
+const Bus = new Vue();
 new Vue({
-  el: '#root',
+  el: "#root",
   router,
-  data:{
-   Bus 
+  data: {
+    Bus,
   },
   store,
   components: { GlobalLayout },
-  template: '<GlobalLayout/>'
-})
+  template: "<GlobalLayout/>",
+});
 
-if(module.hot) {
+if (module.hot) {
   module.hot.accept();
 }

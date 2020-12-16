@@ -1,28 +1,24 @@
 <template>
   <div>
-    <div class="vux-home">
-      user--主页{{msg}}
-  </div>
+    <div class="vux-home">user--主页{{ msg }}</div>
   </div>
 </template>
 
 <script>
 import { API } from "@/services/index.js";
 export default {
-  data () {
+  data() {
     return {
-      msg: 'Hello World!home',
-    }
+      msg: "Hello World!home",
+    };
   },
-  mounted() {
-      //this.$store.dispatch('getNavData')
-  }
-}
+  mounted() {},
+};
 </script>
 
-<style>
+<style lang="less" scoped>
 .vux-home {
   text-align: center;
-  color:blue;
+  color: blue;
 }
 </style>

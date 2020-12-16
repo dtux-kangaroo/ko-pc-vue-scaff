@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
 .login-form {
     margin: 0 auto;
     width: 380px;

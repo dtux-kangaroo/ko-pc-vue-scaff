@@ -1,15 +1,13 @@
 <template>
-<div>
- innerOrOuter
-</div>
+  <div>
+    innerOrOuter
+  </div>
 </template>
 <script>
-
 export default {
-  components: { },
+  components: {},
   data() {
-    return {
-    };
-  }
+    return {};
+  },
 };
 </script>

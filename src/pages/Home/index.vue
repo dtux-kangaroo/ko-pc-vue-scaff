@@ -2,54 +2,55 @@
   <div>
     <div class="vux-home">
       <LineChart
-       :option="lineOption"
-       :config="{'handle':test}"
-       height="300px"></LineChart>
+        :option="lineOption"
+        :config="{ handle: test }"
+        height="300px"
+      ></LineChart>
       <BarChart
-       :option="barOption"
-       :config="{'handle':test}"
-       height="300px"
-       ></BarChart>
+        :option="barOption"
+        :config="{ handle: test }"
+        height="300px"
+      ></BarChart>
       <PieChart
-       :option="pieOption"
-       :config="{'handle':test}"
-       height="300px"
-       ></PieChart>
-  </div>
+        :option="pieOption"
+        :config="{ handle: test }"
+        height="300px"
+      ></PieChart>
+    </div>
   </div>
 </template>
 
 <script>
 import { API } from "@/services/index.js";
-import {PieChart,BarChart,LineChart} from "@/components/chart/index"
-import {barOption,pieOption,lineOption}from '@/constants/options'
+import { PieChart, BarChart, LineChart } from "@/components/chart/index";
+import { barOption, pieOption, lineOption } from "@/constants/options";
 
 export default {
-  components:{
+  components: {
     PieChart,
     BarChart,
-    LineChart
+    LineChart,
   },
-  data () {
+  data() {
     return {
-      msg: 'Hello World!home',
+      msg: "Hello World!home",
       barOption,
       lineOption,
-      pieOption
-    }
+      pieOption,
+    };
   },
-methods:{
-  test(option){
-   console.log(option);
-   //可添加事件
-  }
-}
-}
+  methods: {
+    test(option) {
+      console.log(option);
+      //可添加事件
+    },
+  },
+};
 </script>
 
-<style>
+<style lang="less" scoped>
 .vux-home {
   text-align: center;
-  color:blue;
+  color: blue;
 }
 </style>
