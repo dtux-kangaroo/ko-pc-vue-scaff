@@ -37,7 +37,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="less" scoped>
 .side-nav {
   text-align: left;
   .iconfont {

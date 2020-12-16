@@ -9,7 +9,6 @@ instance.interceptors.request.use(config => {
   //config.headers['X-Token'] = getToken()
   return config
 }, error => {
-  console.log(error)
   Promise.reject(error)
 })
 
@@ -26,7 +25,6 @@ instance.interceptors.response.use(
     }
   },
   error => {
-    console.log('err' + error)
     return Promise.reject(error)
   })
 

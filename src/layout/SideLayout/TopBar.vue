@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less" scoped>
 .el-dropdown {
   color: #fff;
   cursor: pointer;
