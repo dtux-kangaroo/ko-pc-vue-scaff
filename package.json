@@ -10,7 +10,8 @@
     "dev": "ko dev",
     "build": "ko build",
     "swagger": "ko swagger",
-    "preview": "ko preview"
+    "preview": "ko preview",
+    "ct": "git add . && git cz"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

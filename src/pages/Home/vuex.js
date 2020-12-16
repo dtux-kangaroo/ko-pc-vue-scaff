@@ -1,22 +1,21 @@
 import { API } from "@/services";
 
-
 const home = {
   state: {
-    homeData:[]
+    homeData: [],
   },
   mutations: {
     GET_HOME_DATA: (state, homeData) => {
-      state.homeData = homeData
-    }
+      state.homeData = homeData;
+    },
   },
   actions: {
-    getHomeData({ commit }, params,cb) {
-      API.getHomeData({}).then(ret=>{
-          commit('GET_HOME_DATA', ret.data||[]);
-        })
-     }
-  }
-}
+    getHomeData({ commit }, params, cb) {
+      API.getHomeData({}).then((res) => {
+        commit("GET_HOME_DATA", res.data);
+      });
+    },
+  },
+};
 
-export default home
+export default home;

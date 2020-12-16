@@ -1,65 +1,56 @@
 <template>
-    <el-container>
-      <el-header>
-        <TopBar :nav-data="navData" :userData="userData"/></el-header>
-        <el-main style="padding:0px">
-          <router-view></router-view>
-        </el-main>
-    </el-container>
+  <el-container>
+    <el-header> <TopBar :nav-data="navData" :userData="userData"/></el-header>
+    <el-main style="padding:0px">
+      <router-view></router-view>
+    </el-main>
+  </el-container>
 </template>
 <script>
-import Footer from '@/components/Footer'
-import TopBar from './TopBar'
-import { mapState } from 'vuex'
+import Footer from "@/components/Footer";
+import TopBar from "./TopBar";
+import { mapState } from "vuex";
 export default {
-  components:{Footer,TopBar},
+  components: { Footer, TopBar },
   data() {
     return {
-      msg: "layout",
-      userData:{
-        name:'dtux',
-        phone:'13099999999'
+      userData: {
+        name: "dtux",
+        phone: "13099999999",
       },
-      sideData:[]
     };
   },
   mounted() {
-    this.$store.dispatch('getNavData');
+    this.$store.dispatch("getNavData");
   },
-  beforeUpdate(){
-    console.log(this.navData,'navData');
+  beforeUpdate() {
   },
-  methods: {},
   computed: mapState({
-    navData: state => state.global.navData
-  })
+    navData: (state) => state.global.navData,
+  }),
 };
 </script>
 
-<style lang="scss">
-  .el-header {
-    background: #001529;
-    height:54px !important;
-    line-height: 54px;
+<style lang="less" scoped>
+.el-header {
+  background: #001529;
+  height: 54px !important;
+  line-height: 54px;
+}
+.el-aside {
+  color: #333;
+}
+.el-main {
+  background-color: #f0f2f5;
+  color: #333;
+  text-align: center;
+  .content {
+    background: #fff;
+    min-height: 600px;
   }
-
-  .el-aside {
-    color: #333;
-  }
-
-  .el-main {
-    background-color: #f0f2f5;
-    color: #333;
-    text-align: center;
-    .content{
-      background: #fff;
-      min-height:600px;
-
-    }
-  }
-
-  .el-footer{
-    background: #f0f2f5;
-    padding:0px !important;
-  }
+}
+.el-footer {
+  background: #f0f2f5;
+  padding: 0px !important;
+}
 </style>

@@ -15,19 +15,15 @@
   </div>
 </template>
 <script>
-import { PieChart, BarChart, LineChart } from "@/components/chart/index";
-import { barOption, pieOption, lineOption } from "@/constants/options";
+import { BarChart } from "@/components/chart/index";
+import { barOption } from "@/constants/options";
 export default {
   components: {
-    PieChart,
     BarChart,
-    LineChart,
   },
   data() {
     return {
       barOption,
-      lineOption,
-      pieOption,
       editableTabsValue: "2",
       editableTabs: [
         {
