@@ -13,7 +13,7 @@ export default new Router({
       component: MainLayout,
       children: [
         {
-          path: '',
+          path: '/',
           name: 'home',
           component: ()=>import('@/pages/Home')
         },
