@@ -40,7 +40,6 @@ const http = {
     })
   },
   get(url, params) {
-    console.log(url, params)
     return instance({
       url,
       params,
