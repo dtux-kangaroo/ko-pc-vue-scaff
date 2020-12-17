@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Tip404 from '@/pages/exception/404'
 import MainLayout from '@/layout/MainLayout';
-import ApiLayout from '@/pages/Market';
+import MarketLayout from '@/pages/Market';
 
 Vue.use(Router)
 export default new Router({
@@ -15,50 +15,55 @@ export default new Router({
         {
           path: '/',
           name: 'home',
-          component: ()=>import('@/pages/Home')
+          component: () => import('@/pages/Home')
         },
-      {
-        path: '/api',
-        component:ApiLayout ,
-        children: [{
+        {
+          path: '/api',
+          component: MarketLayout,
+          children: [{
             path: 'all',
             name: 'all',
-            component: ()=>import("@/pages/Market/components/AllApi"),
+            component: () => import("@/pages/Market/components/AllApi"),
             children: [{
-                path: 'inner',
-                name: 'inner',
-                component: ()=>import("@/pages/Market/components/InnerOrOuter")
-              },
-              {
-                path: 'outer',
-                name: 'outer',
-                component: ()=>import("@/pages/Market/components/InnerOrOuter")
-              },
-              {
-                path: 'serverDetail',
-                name: 'serverDetail',
-                component: ()=>import("@/pages/Market/components/InnerOrOuter")
-              }
+              path: 'inner',
+              name: 'inner',
+              component: () => import("@/pages/Market/components/InnerOrOuter")
+            },
+            {
+              path: 'outer',
+              name: 'outer',
+              component: () => import("@/pages/Market/components/InnerOrOuter")
+            },
+            {
+              path: 'server-detail',
+              name: 'server-detail',
+              component: () => import("@/pages/Market/components/InnerOrOuter")
+            }
             ]
           },
           {
             path: 'publish',
             name: 'publish',
-            component: ()=>import("@/pages/Market/components/Publish"),
+            component: () => import("@/pages/Market/components/Publish"),
           },
           {
             path: 'export',
             name: 'export',
-            component: ()=>import("@/pages/Market/components/Export"),
+            component: () => import("@/pages/Market/components/Export"),
           }
-        ]
-      },
-    ]
+          ]
+        },
+        {
+          path: "/user",
+          name: "user",
+          component: () => import('@/pages/User')
+        }
+      ]
     },
     {
       path: '/login',
       name: 'login',
-      component: ()=>import('@/pages/Login')
+      component: () => import('@/pages/Login')
     },
     {
       path: '/404',

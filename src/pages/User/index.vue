@@ -17,8 +17,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.vux-home {
-  text-align: center;
-  color: blue;
-}
 </style>

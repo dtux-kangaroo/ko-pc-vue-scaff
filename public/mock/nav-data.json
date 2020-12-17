@@ -58,6 +58,14 @@
           }
         ]
 
+      },
+      {
+        "id": 20,
+        "parentId": 3,
+        "permissionName": "我的",
+        "permissionIcon": "",
+        "permissionUrl": "/user",
+        "children": []
       }
     ]
   }
