@@ -7,7 +7,7 @@
 <script>
 export default {};
 </script>
-<style >
+<style>
 .bat-footer {
   text-align: center;
   padding: 20px 0px;

@@ -1,5 +1,9 @@
 <template>
-  <div :class="className" ref="chart"  :style="{height:height,width:'100%'}"/>
+  <div
+    :class="className"
+    ref="chart"
+    :style="{ height: height, width: '100%' }"
+  />
 </template>
 
 <script>
@@ -11,14 +15,14 @@ export default {
   props: {
     className: {
       type: String,
-      default: "chart"
+      default: "chart",
     },
     height: {
       type: String,
-      default: "270px"
+      default: "270px",
     },
-    config:{handle:''},
-    option:{}
+    config: { handle: "" },
+    option: {},
   },
   data() {
     return {
@@ -45,10 +49,9 @@ export default {
       }
       this.chart.setOption(this.option);
       this.chart.hideLoading();
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

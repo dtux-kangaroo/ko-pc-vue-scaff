@@ -3,7 +3,7 @@ import GlobalLayout from "@/layout/GlobalLayout";
 import router from "@/router";
 import Element from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
-import "@public/assets/styles/index.scss";
+import "@public/assets/styles/index.less";
 import store from "./store/index";
 import "@babel/polyfill";
 import Viser from "viser-vue"; //图表库引入
